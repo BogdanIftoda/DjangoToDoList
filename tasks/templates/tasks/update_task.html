@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+	
+	body{
+    	padding: 30px;
+    	background-color: bisque;
+	}
+
+	h1{	
+		font-size: 30px;
+		text-align: center;
+    	font-style: italic;
+    	color: cadetblue;
+	}
+
+	.center-column{
+		width:600px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: #fff;
+		border-radius: 20px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+    }
+
+	.item-row{
+		background-color: #906abd;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 20px;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+
+	input{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+
+	h3{
+		text-align: center;
+    	font-style: italic;
+	}
+
+	form.title{
+		border-radius: 110px;
+	}
+</style>
+<div class="center-column">
+	<h1>Update Task</h1>
+    <form method="POST" action="" >
+        {% csrf_token %}
+        <div class="item-row">
+			<h3>Title</h3>	
+        		{{form.title}}
+			<h3>Complete</h3>
+				{{form.complete}}
+            <input class="btn btn-info" type="submit" name="Update Task">
+        </div>
+    </form>
+</div>
